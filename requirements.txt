@@ -1,1 +1,4 @@
 praw
+pandas
+newspaper3k
+sumy

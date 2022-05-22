@@ -21,4 +21,4 @@ for submission in hot_news:
         urls.append(submission.url)
 
 df = pd.DataFrame({'Title': titles, 'URL': urls})
-df.to_csv(f'./data/{filename}.csv', index=False)
+df.to_csv(f'../data/{filename}.csv', index=False)
