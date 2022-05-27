@@ -1,4 +1,3 @@
-from turtle import title
 from django.shortcuts import render
 from api.reddit_scraper import get_subreddit_posts
 
