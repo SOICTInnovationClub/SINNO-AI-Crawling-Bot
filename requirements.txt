@@ -1,5 +1,0 @@
-praw
-newspaper3k
-sumy
-django
-nltk
