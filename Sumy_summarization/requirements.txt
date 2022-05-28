@@ -1,0 +1,6 @@
+BeautifulSoup4
+Rouge
+Sumy
+nltk
+requests
+pandas
