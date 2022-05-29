@@ -14,7 +14,7 @@ news_set = [
 
 def index(request):
     context = {
-        'news_set': news_set
+        'news_set': NewsArticle.objects.all()
     }
     
     return render(request, 'newsapp/index.html', context)
