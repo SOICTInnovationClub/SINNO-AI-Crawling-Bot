@@ -134,7 +134,7 @@
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="img-container">
-                                <img class="card-img rect-img" src="{{ news.top_image }}" alt="">
+                                <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}" onerror="this.src='../../static/newsapp/placeholder.jpg'">
                             </div>
 
                             <div class="card-body">
@@ -144,7 +144,7 @@
 
                                     <div class="card-more-info">
                                         <span class="card-pub">{{ news.publisher }}</span>
-                                        <span class="card-date">{{ news.pub_date }}</span>
+                                        <!-- <span class="card-date">{{ news.pub_date }}</span> -->
                                     </div>
                                 </div>
 
