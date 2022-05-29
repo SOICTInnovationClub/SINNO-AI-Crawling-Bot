@@ -18,6 +18,7 @@ constantly==15.1.0
 cryptography==37.0.2
 cssselect==1.1.0
 Django==4.0.4
+django-crontab==0.7.1
 docopt==0.6.2
 feedfinder2==0.0.4
 feedparser==6.0.9

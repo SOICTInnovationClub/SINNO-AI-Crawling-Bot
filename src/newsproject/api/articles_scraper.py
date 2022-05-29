@@ -7,14 +7,21 @@ config.browser_user_agent = USER_AGENT
 config.request_timeout = 10
 
 def get_article(url):
-    article = Article(url, config=config)
-    article.download()
-    article.parse()
+    try:
+        article = Article(url, config=config)
+        article.download()
+        article.parse()
+    except Exception as e:
+        print(e)
+
+    source = url.split('/')[2]
 
     res = {
         'title': article.title, 
         'text': article.text,
         'image': article.top_image,
+        'pub_date': article.publish_date,
+        'publisher': source,
     }
 
     return res

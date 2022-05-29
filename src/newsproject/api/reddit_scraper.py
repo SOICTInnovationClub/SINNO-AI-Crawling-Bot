@@ -1,6 +1,4 @@
 import praw
-from api.articles_scraper import get_article
-from api.summary import get_summary
 
 def get_subreddit_posts(thread='technology', num_posts=20):
     reddit = praw.Reddit(
@@ -15,17 +13,13 @@ def get_subreddit_posts(thread='technology', num_posts=20):
 
     hot_news = subreddit.hot(limit=num_posts)
 
-    data = {'titles': [], 'urls': [], 'summary': [], 'images': []}
+    articles = []
 
     for submission in hot_news:
         if not submission.stickied:
-            data['titles'].append(submission.title)
-            data['urls'].append(submission.url)
+            article = {}
+            article['title'] = submission.title
+            article['url'] = submission.url
+            articles.append(article)
 
-            article = get_article(submission.url)
-            summary = get_summary(article['text'])
-            data['summary'].append(summary)
-
-            data['images'].append(article['image'])
-
-    return data
+    return articles

@@ -4,9 +4,6 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.summarizers.lex_rank import LexRankSummarizer as Summarizer
 
-import nltk
-nltk.download('punkt')
-
 LANGUAGE = "english"
 
 # configurable number of sentences
