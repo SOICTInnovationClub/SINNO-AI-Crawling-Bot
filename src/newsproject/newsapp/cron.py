@@ -4,6 +4,8 @@ from api.articles_scraper import get_article
 from api.summary import get_summary
 
 def fetch_news_articles(): 
+    print("Getting new batch of articles")
+
     NewsArticle.objects.all().delete()
 
     articles = get_subreddit_posts()

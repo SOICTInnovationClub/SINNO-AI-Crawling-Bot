@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4qp_)x2(1y509@yqb=jx=-2ct#q&q&#38zqvh3)oq)qv_73$%c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['103.3.60.235']
 
 
 # Application definition
@@ -128,5 +128,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRONJOBS = [
-    ('* */1 * * *', 'newsapp.cron.fetch_news_articles', '>> /cron/fetch_news_articles.log'),
+    ('* */6 * * *', 'newsapp.cron.fetch_news_articles', '>> ~/cron_job.log'),
 ]
