@@ -11,7 +11,7 @@ def body(url) :
     article = requests.get(url)
     doc = BeautifulSoup(article.text, "html.parser")
     
-    bodies = doc.find_all('p')[4:6] 
+    bodies = doc.find('article').find_all(lambda tag: tag.name == 'p' and not tag.attrs) 
     bodies = [paragraph.text.strip() for paragraph in bodies]
     body = ' '.join(bodies)
     paragraphs.append(body)
@@ -27,7 +27,7 @@ def article_links_and_title(url) :
         titles_data.append(title)
         links_data.append(link)  
 
-url = "https://arstechnica.com/"
+url = "https://arstechnica.com/gadgets/"
 article_links_and_title(url)
 for link in links_data:
     body(link)

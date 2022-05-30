@@ -11,7 +11,7 @@ def body(url) :
     article = requests.get(url)
     doc = BeautifulSoup(article.text, "html.parser")
     
-    bodies = doc.find('div', attrs={'class':'c-entry-content'}).find_all('p')[0:4] 
+    bodies = doc.find('div', attrs={'class':'c-entry-content'}).find_all('p') 
     for paragraph in bodies:
         for match in paragraph.find_all('a'):
             for emphasized in match.find_all('em'):
