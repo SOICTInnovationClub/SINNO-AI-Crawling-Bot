@@ -1,0 +1,3 @@
+nltk-rake
+stopwords (nltk.download('stopwords'))
+seaborn
