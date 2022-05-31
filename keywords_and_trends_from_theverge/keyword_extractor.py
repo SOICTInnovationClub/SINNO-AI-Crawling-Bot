@@ -3,7 +3,7 @@ import pandas as pd
 import seaborn as sns
 
 r = Rake()
-file = pd.read_csv('data.csv')
+file = pd.read_csv('../data/theverge_data.csv')
 keywordList = {}
 for my_text in file.loc[:,'Body']:
   r.extract_keywords_from_text(my_text)

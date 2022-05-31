@@ -40,4 +40,4 @@ for link in links_data:
 df = pd.DataFrame({'Title': titles_data,
                    'Link': links_data,
                   'Body': paragraphs})
-df.to_csv("data.csv", encoding='utf-8-sig', index=False)
+df.to_csv("../data/theverge_data.csv", encoding='utf-8-sig', index=False)

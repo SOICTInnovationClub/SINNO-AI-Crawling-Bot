@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
-ARTICLES_COUNT = 10
+ARTICLES_COUNT = 15
 titles_data = []
 links_data = []
 paragraphs = []
@@ -43,16 +43,18 @@ f1_lsa = []
 def body(url) :   
     article = requests.get(url)
     doc = BeautifulSoup(article.text, "html.parser")
-    
-    bodies = doc.find('div', attrs={'class':'article-content'}).find_all('p')
-    for paragraph in bodies:
-        for match in paragraph.find_all('a'):
-            match.replaceWithChildren()
+    if(doc.find('div', attrs={'class':'article-content'}) is None):
+        titles_data.pop()
+        links_data.pop()
+    else: 
+        bodies = doc.find('div', attrs={'class':'article-content'}).find_all('p')
+        for paragraph in bodies:
+            for match in paragraph.find_all('a'):
+                match.replaceWithChildren()
+        bodies = [paragraph.text for paragraph in bodies]
+        body = ' '.join(bodies)
+        paragraphs.append(body)
 
-    bodies = [paragraph.text for paragraph in bodies]
-    body = ' '.join(bodies)
-    
-    paragraphs.append(body)
         
 def article_links_and_title(url) :
     page = requests.get(url)
@@ -97,7 +99,7 @@ for link in links_data:
 data = pd.DataFrame({'Title': titles_data,
                     'Link': links_data,
                     'Body': paragraphs})
-data.to_csv("data.csv", encoding='utf-8-sig', index=False)
+data.to_csv("../data/techcrunch_data.csv", encoding='utf-8-sig', index=False)
 # df = pd.DataFrame({'Title': titles_data,
 #                    'Link': links_data,
 #                   'Original paragraphs': paragraphs,
