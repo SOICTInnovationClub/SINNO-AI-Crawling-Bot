@@ -8,7 +8,7 @@ Technology is always changing. To embrace change in the world of technology, we 
 ## Project description
 - Crawl data from different sources
 - Summarize and extract keywords from data
-- Create a web display results
+- Create a web displaying results
 
 ## Source code
 - Language used : python, html, css
