@@ -22,7 +22,7 @@ Technology is always changing. To embrace change in the world of technology, we 
 - Text Summary: Tien Son, Quang Nghia
 - Keywords extraction : Thu Huyen, Quang Nghia, Ngoc Quan
 - Web developing : Tien Son
-- Tester : Tien Son, Thu Huyen
+- Tester : Tien Son, Thu Huyen, Ngoc Quan, Quang Nghia
 
 
 
