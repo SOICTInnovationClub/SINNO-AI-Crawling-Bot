@@ -24,4 +24,7 @@ def get_article(url):
         'publisher': source,
     }
 
+    if len(article.text.split()) < 100:
+        res['text'] = article.meta_description
+
     return res
