@@ -4,7 +4,7 @@ USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:78.0) Gecko/20100
 
 config = Config()
 config.browser_user_agent = USER_AGENT
-config.request_timeout = 10
+config.request_timeout = 20
 
 def get_article(url):
     try:

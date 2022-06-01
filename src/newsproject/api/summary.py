@@ -7,7 +7,7 @@ from sumy.summarizers.lex_rank import LexRankSummarizer as Summarizer
 LANGUAGE = "english"
 
 # configurable number of sentences
-SENTENCES_COUNT = 3
+SENTENCES_COUNT = 2
 
 def get_summary(text):
     # text cleaning

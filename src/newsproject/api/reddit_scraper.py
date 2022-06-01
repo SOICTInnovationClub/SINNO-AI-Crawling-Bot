@@ -21,7 +21,7 @@ def get_subreddit_posts(thread='technology', limit_nposts=20):
     for submission in hot_news:
         source = submission.url.split('/')[2]
 
-        if (not submission.stickied) and (source not in ignored_sources) and (nposts <= limit_nposts):          
+        if (not submission.stickied) and (source not in ignored_sources) and (nposts < limit_nposts):          
             nposts += 1
             article = {}
             article['title'] = submission.title

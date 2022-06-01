@@ -128,10 +128,13 @@
         </section>
 
         <div class="album py-5 bg-light">
+        <div class="container headline">
+            <h4>Hot on <a href="https://www.reddit.com/r/technology/" class="reddit">r/technology</a></h4>
+        </div>
         <div class="container">
 
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
-                {% for news in news_set %}
+                {% for news in reddit_news %}
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="img-container">
@@ -145,7 +148,7 @@
 
                                     <div class="card-more-info">
                                         <span class="card-pub">{{ news.publisher }}</span>
-                                        <!-- <span class="card-date">{{ news.pub_date }}</span> -->
+                                        <!-- <span class="card-date">{{ news.pub_date|date:"j M" }}</span> -->
                                     </div>
                                 </div>
 
@@ -155,6 +158,173 @@
                             </div>
                         </div>
                     </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container headline-after">
+            <h4>Hot on <a href="https://www.theverge.com/" class="theverge">The Verge</a></h4>
+        </div>
+        <div class="container">
+        
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
+                {% for news in theverge_news %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="img-container">
+                            <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
+                                onerror="this.src='../../static/newsapp/placeholder.jpg'">
+                        </div>
+        
+                        <div class="card-body">
+                            <div class="card-head">
+                                <a class="card-link" href="{{ news.url }}" target="_blank"></a>
+                                <h1 class="card-title">{{ news.title }}</h1>
+        
+                                <div class="card-more-info">
+                                    <span class="card-pub">{{ news.publisher }}</span>
+                                    <!-- <span class="card-date">{{ news.pub_date|date:"j M" }}</span> -->
+                                </div>
+                            </div>
+        
+                            <div class="card-content">
+                                <p class="card-text">{{ news.summary }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container headline-after">
+            <h4>Hot on <a href="https://techcrunch.com/" class="techcrunch">TechCrunch</a></h4>
+        </div>
+        <div class="container">
+        
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
+                {% for news in techcrunch_news %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="img-container">
+                            <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
+                                onerror="this.src='../../static/newsapp/placeholder.jpg'">
+                        </div>
+        
+                        <div class="card-body">
+                            <div class="card-head">
+                                <a class="card-link" href="{{ news.url }}" target="_blank"></a>
+                                <h1 class="card-title">{{ news.title }}</h1>
+        
+                                <div class="card-more-info">
+                                    <span class="card-pub">{{ news.publisher }}</span>
+                                    <!-- <span class="card-date">{{ news.pub_date|date:"j M" }}</span> -->
+                                </div>
+                            </div>
+        
+                            <div class="card-content">
+                                <p class="card-text">{{ news.summary }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container headline-after">
+            <h4>Hot on <a href="https://www.iottechnews.com/" class="iot">IoT Tech News</a></h4>
+        </div>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
+                {% for news in iot_news %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="img-container">
+                            <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
+                                onerror="this.src='../../static/newsapp/placeholder.jpg'">
+                        </div>
+        
+                        <div class="card-body">
+                            <div class="card-head">
+                                <a class="card-link" href="{{ news.url }}" target="_blank"></a>
+                                <h1 class="card-title">{{ news.title }}</h1>
+        
+                                <div class="card-more-info">
+                                    <span class="card-pub">{{ news.publisher }}</span>
+                                    <!-- <span class="card-date">{{ news.pub_date|date:"j M" }}</span> -->
+                                </div>
+                            </div>
+        
+                            <div class="card-content">
+                                <p class="card-text">{{ news.summary }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container headline-after">
+            <h4>Hot on <a href="https://www.artificialintelligence-news.com/" class="iot">AINews</a></h4>
+        </div>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
+                {% for news in ai_news %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="img-container">
+                            <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
+                                onerror="this.src='../../static/newsapp/placeholder.jpg'">
+                        </div>
+        
+                        <div class="card-body">
+                            <div class="card-head">
+                                <a class="card-link" href="{{ news.url }}" target="_blank"></a>
+                                <h1 class="card-title">{{ news.title }}</h1>
+        
+                                <div class="card-more-info">
+                                    <span class="card-pub">{{ news.publisher }}</span>
+                                    <!-- <span class="card-date">{{ news.pub_date|date:"j M" }}</span> -->
+                                </div>
+                            </div>
+        
+                            <div class="card-content">
+                                <p class="card-text">{{ news.summary }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container headline-after">
+            <h4>Hot on <a href="https://arstechnica.com/" class="reddit">arstechnica</a></h4>
+        </div>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
+                {% for news in arstechnica_news %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="img-container">
+                            <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
+                                onerror="this.src='../../static/newsapp/placeholder.jpg'">
+                        </div>
+        
+                        <div class="card-body">
+                            <div class="card-head">
+                                <a class="card-link" href="{{ news.url }}" target="_blank"></a>
+                                <h1 class="card-title">{{ news.title }}</h1>
+        
+                                <div class="card-more-info">
+                                    <span class="card-pub">{{ news.publisher }}</span>
+                                    <!-- <span class="card-date">{{ news.pub_date|date:"j M" }}</span> -->
+                                </div>
+                            </div>
+        
+                            <div class="card-content">
+                                <p class="card-text">{{ news.summary }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {% endfor %}
             </div>
         </div>
