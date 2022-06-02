@@ -5,6 +5,7 @@ from api.reddit_scraper import get_subreddit_posts
 from api.articles_scraper import get_article
 from api.summary import get_summary
 from api.csv_scraper import get_csv_articles
+from api.keyword_extractor import keyword_extractor
 
 def fetch_news_articles(): 
     NewsArticle.objects.all().delete()
@@ -25,10 +26,11 @@ def fetch_news_articles():
 
             if res['text']:
                 summary = get_summary(text)
+                keywords = keyword_extractor(text)
 
                 print(url)
 
-                NewsArticle.objects.create(
+                a = NewsArticle.objects.create(
                     title=title,
                     url=url,
                     body=text,
@@ -36,6 +38,7 @@ def fetch_news_articles():
                     summary=summary,
                     publisher=publisher,
                     pub_date=pub_date,
+                    keywords=keywords,
                     source='reddit'
                 )
 
@@ -59,10 +62,11 @@ def fetch_news_articles():
 
             if res['text']:
                 summary = get_summary(text)
+                keywords = keyword_extractor(text)
 
                 print(url)
 
-                NewsArticle.objects.create(
+                a = NewsArticle.objects.create(
                     title=title,
                     url=url,
                     body=text,
@@ -70,5 +74,6 @@ def fetch_news_articles():
                     summary=summary,
                     publisher=publisher,
                     pub_date=pub_date,
+                    keywords=keywords,
                     source='csv'
                 )

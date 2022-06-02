@@ -114,6 +114,11 @@
     padding-top: 0.5rem;
 }
 
+.keyword-tag {
+    color:rgb(0, 153, 255);
+    padding-right: 3px;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
     .img-container {
