@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from matplotlib.style import context
 from .models import NewsArticle
 
 def index(request):
@@ -12,3 +13,39 @@ def index(request):
     }
     
     return render(request, 'newsapp/index.html', context)
+
+def reddit(request):
+    context = {
+        'news_set': NewsArticle.objects.filter(source='reddit'),
+    }
+    return render(request, 'newsapp/more.html', context)
+
+def theverge(request):
+    context = {
+        'news_set': NewsArticle.objects.filter(publisher='www.theverge.com', source='csv').order_by('-pub_date'),
+    }
+    return render(request, 'newsapp/more.html', context)
+
+def techcrunch(request):
+    context = {
+        'news_set': NewsArticle.objects.filter(publisher='techcrunch.com', source='csv').order_by('-pub_date'),
+    }
+    return render(request, 'newsapp/more.html', context)
+
+def iotnews(request):
+    context = {
+        'news_set': NewsArticle.objects.filter(publisher='www.iottechnews.com', source='csv').order_by('-pub_date'),
+    }
+    return render(request, 'newsapp/more.html', context)
+
+def ainews(request):
+    context = {
+        'news_set': NewsArticle.objects.filter(publisher='www.artificialintelligence-news.com', source='csv').order_by('-pub_date'),
+    }
+    return render(request, 'newsapp/more.html', context)
+
+def arstechnica(request):
+    context = {
+        'news_set': NewsArticle.objects.filter(publisher='arstechnica.com', source='csv'),
+    }
+    return render(request, 'newsapp/more.html', context)

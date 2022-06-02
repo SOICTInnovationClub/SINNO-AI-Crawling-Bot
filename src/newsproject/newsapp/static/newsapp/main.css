@@ -1,9 +1,24 @@
 .headline {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .headline-after {
     margin-top: 32px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.headline > a,
+.headline-after > a {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .reddit {
@@ -118,8 +133,18 @@
         color: rgba(0, 0, 0, 0.6)
     }
 
-    .card-content {
-        display: none;
+    .arrow-down {
+        height: 8px;
+    }
+
+    .card-text {
+        display: none
+    }
+
+    .card--expanded
+
+    .card--expanded .card-text {
+        display: block;
     }
 
 }

@@ -7,9 +7,9 @@ from api.summary import get_summary
 from api.csv_scraper import get_csv_articles
 
 def fetch_news_articles(): 
-    print("Getting new batch of articles")
-
     NewsArticle.objects.all().delete()
+
+    print("Getting articles from reddit")
 
     articles = get_subreddit_posts()
 
@@ -26,6 +26,8 @@ def fetch_news_articles():
             if res['text']:
                 summary = get_summary(text)
 
+                print(url)
+
                 NewsArticle.objects.create(
                     title=title,
                     url=url,
@@ -36,6 +38,8 @@ def fetch_news_articles():
                     pub_date=pub_date,
                     source='reddit'
                 )
+
+    print("Getting articles from csv")
         
     urls = get_csv_articles()
     for url in urls:
@@ -45,13 +49,18 @@ def fetch_news_articles():
             text = res['text']
             top_image = res['image']
             try:
-                pub_date = make_aware(res['pub_date'])
+                if res['pub_date']:
+                    pub_date = make_aware(res['pub_date'])
+                else:
+                    pub_date = None
             except ValueError:
                 pub_date = res['pub_date']
             publisher = res['publisher']
 
             if res['text']:
                 summary = get_summary(text)
+
+                print(url)
 
                 NewsArticle.objects.create(
                     title=title,

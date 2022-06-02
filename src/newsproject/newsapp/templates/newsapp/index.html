@@ -1,349 +1,222 @@
+{% extends "newsapp/base.html" %}
 {% load static %}
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="SINNO News updates you with summarized articles on technology to help you receive information quickly and save time.">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.98.0">
-    <title>SINNO News - Bring you latest tech news everyday</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="{% static 'newsapp/main.css' %}">
-    
-    <!-- Favicons -->
-    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
-    <meta name="theme-color" content="#712cf9">
-
-
-    <style>
-        .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-        }
-
-        @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-        }
-        }
-
-        .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
-
-        .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-        }
-
-        .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-        }
-
-        .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-        }
-
-        .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-        }
-    </style>
-
-
-</head>
-
-<body>
-
-    <header>
-        <div class="collapse bg-dark" id="navbarHeader">
-        <div class="container">
-            <div class="row">
-            <div class="col-sm-8 col-md-7 py-4">
-                <h4 class="text-white">About</h4>
-                <p class="text-white">Technology is always changing. To embrace change in the world of technology, we created SINNO News - a website that can automatically
-                update articles about science and technology from many different websites. Each article on SINNO NEWS has been summarized and
-                extracted keywords, which help you receive information quickly and save time.</p>
-            </div>
-            <div class="col-sm-4 offset-md-1 py-4">
-                <h4 class="text-white">Creators</h4>
-                <ul class="list-unstyled">
-                <li><span class="text-white">Ngô Thị Thu Huyền</span></li>
-                <li><span class="text-white">Phạm Quang Nghĩa</span></li>
-                <li><span class="text-white">Phạm Ngọc Quân</span></li>
-                <li><span class="text-white">Phạm Tiến Sơn</span></li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        </div>
-        <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container">
-            <a href="#" class="navbar-brand d-flex align-items-center">
-            <img src="{% static 'newsapp/logo-2.png' %}" alt="Mobirise" style="height: 2rem; margin-right: 0.2rem;">
-            <strong>SINNO NEWS</strong>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
-            aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-        </div>
-    </header>
-
-    <main>
-
-        <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
+{% block content %}
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light">SINNO NEWS</h1>
             <p class="lead text-muted">Update latest changes in the ever-changing world of technology.</p>
-            </div>
         </div>
-        </section>
+    </div>
+</section>
 
-        <div class="album py-5 bg-light">
-        <div class="container headline">
-            <h4>Hot on <a href="https://www.reddit.com/r/technology/" class="reddit">r/technology</a></h4>
-        </div>
-        <div class="container">
+<div class="album py-5 bg-light">
+<div class="container headline">
+    <h4>Hot on <a href="https://www.reddit.com/r/technology/" class="reddit">r/technology</a></h4>
+    <a href="/reddit">See more</a>
+</div>
+<div class="container">
 
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
-                {% for news in reddit_news %}
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <div class="img-container">
-                                <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}" onerror="this.src='../../static/newsapp/placeholder.jpg'">
-                            </div>
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
+        {% for news in reddit_news %}
+        <div class="col" onclick="expand(this)">
+            <div class="card shadow-sm">
+                <div class="img-container">
+                    <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
+                        onerror="this.src='../../static/newsapp/placeholder.jpg'">
+                </div>
 
-                            <div class="card-body">
-                                <div class="card-head">
-                                    <a class="card-link" href="{{ news.url }}" target="_blank"></a>
-                                    <h1 class="card-title">{{ news.title }}</h1>
+                <div class="card-body">
+                    <div class="card-head">
+                        <a class="card-link" href="{{ news.url }}" target="_blank"></a>
+                        <h1 class="card-title">{{ news.title }}</h1>
 
-                                    <div class="card-more-info">
-                                        <span class="card-pub">{{ news.publisher }}</span>
-                                        <!-- <span class="card-date">{{ news.pub_date|date:"j M" }}</span> -->
-                                    </div>
-                                </div>
-
-                                <div class="card-content">
-                                    <p class="card-text">{{ news.summary }}</p>
-                                </div>
-                            </div>
+                        <div class="card-more-info">
+                            <span class="card-pub">{{ news.publisher }}</span>
+                            <!-- <span class="card-date">{{ news.pub_date|date:"j M" }}</span> -->
                         </div>
                     </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="container headline-after">
-            <h4>Hot on <a href="https://www.theverge.com/" class="theverge">The Verge</a></h4>
-        </div>
-        <div class="container">
-        
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
-                {% for news in theverge_news %}
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <div class="img-container">
-                            <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
-                                onerror="this.src='../../static/newsapp/placeholder.jpg'">
-                        </div>
-        
-                        <div class="card-body">
-                            <div class="card-head">
-                                <a class="card-link" href="{{ news.url }}" target="_blank"></a>
-                                <h1 class="card-title">{{ news.title }}</h1>
-        
-                                <div class="card-more-info">
-                                    <span class="card-pub">{{ news.publisher }}</span>
-                                    <span class="card-date">{{ news.pub_date|date:"j M" }}</span>
-                                </div>
-                            </div>
-        
-                            <div class="card-content">
-                                <p class="card-text">{{ news.summary }}</p>
-                            </div>
-                        </div>
+
+                    <div class="card-content">
+                        <p class="card-text">{{ news.summary }}</p>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
-        <div class="container headline-after">
-            <h4>Hot on <a href="https://techcrunch.com/" class="techcrunch">TechCrunch</a></h4>
-        </div>
-        <div class="container">
-        
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
-                {% for news in techcrunch_news %}
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <div class="img-container">
-                            <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
-                                onerror="this.src='../../static/newsapp/placeholder.jpg'">
-                        </div>
-        
-                        <div class="card-body">
-                            <div class="card-head">
-                                <a class="card-link" href="{{ news.url }}" target="_blank"></a>
-                                <h1 class="card-title">{{ news.title }}</h1>
-        
-                                <div class="card-more-info">
-                                    <span class="card-pub">{{ news.publisher }}</span>
-                                    <span class="card-date">{{ news.pub_date|date:"j M" }}</span>
-                                </div>
-                            </div>
-        
-                            <div class="card-content">
-                                <p class="card-text">{{ news.summary }}</p>
-                            </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="container headline-after">
+    <h4>Hot on <a href="https://www.theverge.com/" class="theverge">The Verge</a></h4>
+    <a href="/theverge">See more</a>
+</div>
+<div class="container">
+
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
+        {% for news in theverge_news %}
+        <div class="col">
+            <div class="card shadow-sm">
+                <div class="img-container">
+                    <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
+                        onerror="this.src='../../static/newsapp/placeholder.jpg'">
+                </div>
+
+                <div class="card-body">
+                    <div class="card-head">
+                        <a class="card-link" href="{{ news.url }}" target="_blank"></a>
+                        <h1 class="card-title">{{ news.title }}</h1>
+
+                        <div class="card-more-info">
+                            <span class="card-pub">{{ news.publisher }}</span>
+                            <span class="card-date">{{ news.pub_date|date:"j M" }}</span>
                         </div>
                     </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="container headline-after">
-            <h4>Hot on <a href="https://www.iottechnews.com/" class="iot">IoT Tech News</a></h4>
-        </div>
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
-                {% for news in iot_news %}
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <div class="img-container">
-                            <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
-                                onerror="this.src='../../static/newsapp/placeholder.jpg'">
-                        </div>
-        
-                        <div class="card-body">
-                            <div class="card-head">
-                                <a class="card-link" href="{{ news.url }}" target="_blank"></a>
-                                <h1 class="card-title">{{ news.title }}</h1>
-        
-                                <div class="card-more-info">
-                                    <span class="card-pub">{{ news.publisher }}</span>
-                                    <span class="card-date">{{ news.pub_date|date:"j M" }}</span>
-                                </div>
-                            </div>
-        
-                            <div class="card-content">
-                                <p class="card-text">{{ news.summary }}</p>
-                            </div>
-                        </div>
+
+                    <div class="card-content">
+                        <p class="card-text">{{ news.summary }}</p>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
-        <div class="container headline-after">
-            <h4>Hot on <a href="https://www.artificialintelligence-news.com/" class="iot">AINews</a></h4>
-        </div>
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
-                {% for news in ai_news %}
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <div class="img-container">
-                            <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
-                                onerror="this.src='../../static/newsapp/placeholder.jpg'">
-                        </div>
-        
-                        <div class="card-body">
-                            <div class="card-head">
-                                <a class="card-link" href="{{ news.url }}" target="_blank"></a>
-                                <h1 class="card-title">{{ news.title }}</h1>
-        
-                                <div class="card-more-info">
-                                    <span class="card-pub">{{ news.publisher }}</span>
-                                    <span class="card-date">{{ news.pub_date|date:"j M" }}</span>
-                                </div>
-                            </div>
-        
-                            <div class="card-content">
-                                <p class="card-text">{{ news.summary }}</p>
-                            </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="container headline-after">
+    <h4>Hot on <a href="https://techcrunch.com/" class="techcrunch">TechCrunch</a></h4>
+    <a href="/techcrunch">See more</a>
+</div>
+<div class="container">
+
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
+        {% for news in techcrunch_news %}
+        <div class="col">
+            <div class="card shadow-sm">
+                <div class="img-container">
+                    <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
+                        onerror="this.src='../../static/newsapp/placeholder.jpg'">
+                </div>
+
+                <div class="card-body">
+                    <div class="card-head">
+                        <a class="card-link" href="{{ news.url }}" target="_blank"></a>
+                        <h1 class="card-title">{{ news.title }}</h1>
+
+                        <div class="card-more-info">
+                            <span class="card-pub">{{ news.publisher }}</span>
+                            <span class="card-date">{{ news.pub_date|date:"j M" }}</span>
                         </div>
                     </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="container headline-after">
-            <h4>Hot on <a href="https://arstechnica.com/" class="reddit">arstechnica</a></h4>
-        </div>
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
-                {% for news in arstechnica_news %}
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <div class="img-container">
-                            <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
-                                onerror="this.src='../../static/newsapp/placeholder.jpg'">
-                        </div>
-        
-                        <div class="card-body">
-                            <div class="card-head">
-                                <a class="card-link" href="{{ news.url }}" target="_blank"></a>
-                                <h1 class="card-title">{{ news.title }}</h1>
-        
-                                <div class="card-more-info">
-                                    <span class="card-pub">{{ news.publisher }}</span>
-                                    <span class="card-date">{{ news.pub_date|date:"j M" }}</span>
-                                </div>
-                            </div>
-        
-                            <div class="card-content">
-                                <p class="card-text">{{ news.summary }}</p>
-                            </div>
-                        </div>
+
+                    <div class="card-content">
+                        <p class="card-text">{{ news.summary }}</p>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="container headline-after">
+    <h4>Hot on <a href="https://www.iottechnews.com/" class="iot">IoT Tech News</a></h4>
+    <a href="/iotnews">See more</a>
+</div>
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
+        {% for news in iot_news %}
+        <div class="col">
+            <div class="card shadow-sm">
+                <div class="img-container">
+                    <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
+                        onerror="this.src='../../static/newsapp/placeholder.jpg'">
+                </div>
+
+                <div class="card-body">
+                    <div class="card-head">
+                        <a class="card-link" href="{{ news.url }}" target="_blank"></a>
+                        <h1 class="card-title">{{ news.title }}</h1>
+
+                        <div class="card-more-info">
+                            <span class="card-pub">{{ news.publisher }}</span>
+                            <span class="card-date">{{ news.pub_date|date:"j M" }}</span>
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <p class="card-text">{{ news.summary }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="container headline-after">
+    <h4>Hot on <a href="https://www.artificialintelligence-news.com/" class="iot">AINews</a></h4>
+    <a href="/ainews">See more</a>
+</div>
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
+        {% for news in ai_news %}
+        <div class="col">
+            <div class="card shadow-sm">
+                <div class="img-container">
+                    <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
+                        onerror="this.src='../../static/newsapp/placeholder.jpg'">
+                </div>
 
-    </main>
+                <div class="card-body">
+                    <div class="card-head">
+                        <a class="card-link" href="{{ news.url }}" target="_blank"></a>
+                        <h1 class="card-title">{{ news.title }}</h1>
 
-    <footer class="text-muted py-5">
-        <div class="container">
-        <p class="float-end mb-1">
-            <a href="#">Back to top</a>
-        </p>
+                        <div class="card-more-info">
+                            <span class="card-pub">{{ news.publisher }}</span>
+                            <span class="card-date">{{ news.pub_date|date:"j M" }}</span>
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <p class="card-text">{{ news.summary }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+        {% endfor %}
+    </div>
+</div>
+<div class="container headline-after">
+    <h4>Hot on <a href="https://arstechnica.com/" class="reddit">arstechnica</a></h4>
+    <a href="/arstechnica">See more</a>
+</div>
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
+        {% for news in arstechnica_news %}
+        <div class="col">
+            <div class="card shadow-sm">
+                <div class="img-container">
+                    <img class="card-img rect-img" src="{{ news.top_image }}" alt="{{ news.title }}"
+                        onerror="this.src='../../static/newsapp/placeholder.jpg'">
+                </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+                <div class="card-body">
+                    <div class="card-head">
+                        <a class="card-link" href="{{ news.url }}" target="_blank"></a>
+                        <h1 class="card-title">{{ news.title }}</h1>
 
-</body>
+                        <div class="card-more-info">
+                            <span class="card-pub">{{ news.publisher }}</span>
+                            <!-- <span class="card-date">{{ news.pub_date|date:"j M" }}</span> -->
+                        </div>
+                    </div>
 
-</html>
+                    <div class="card-content">
+                        <p class="card-text">{{ news.summary }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock content %}
