@@ -1,0 +1,10 @@
+BeautifulSoup4
+Rouge
+Sumy
+nltk
+requests
+pandas
+nltk-rake
+stopwords
+seaborn
+keybert
