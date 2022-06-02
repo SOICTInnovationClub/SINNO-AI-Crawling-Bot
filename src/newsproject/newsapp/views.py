@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from matplotlib.style import context
 from .models import NewsArticle
 
 def index(request):
