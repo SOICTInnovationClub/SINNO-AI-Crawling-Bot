@@ -1,0 +1,157 @@
+.headline {
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.headline-after {
+    margin-top: 32px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.headline > a,
+.headline-after > a {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.reddit {
+    color: #ff4500;
+    text-decoration: none;
+}
+
+.reddit:hover {
+    color: rgb(220, 0, 0);
+}
+
+.theverge {
+    color: #00b7ee;
+    text-decoration: none;
+}
+
+.theverge:hover {
+    color: rgb(0, 153, 255);
+}
+
+.techcrunch {
+    color: #67d027;
+    text-decoration: none;
+}
+
+.techcrunch:hover {
+    color: rgb(4, 124, 4);
+}
+
+.iot {
+    color: #1e6285;
+    text-decoration: none;
+}
+
+.iot:hover {
+    color: rgb(0, 0, 255);
+}
+
+.card {
+    flex-direction: row;
+}
+
+.img-container {
+    min-width: 8rem;
+    max-width: 8rem;
+    height: 8rem;
+    position: relative;
+    margin: 16px 0 16px 16px;
+}
+
+.rect-img {
+    display: block;
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.card-head {
+    position: relative;
+}
+
+.card-head:hover .card-title {
+    text-decoration: underline;
+}
+
+.card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-more-info {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.6)
+}
+
+.card-date::before {
+    font-size: 0.5625rem;
+    content: "\0000a0\002022\0000a0";
+    margin-right: 0.25rem;
+}
+
+.card-content {
+    padding-top: 0.5rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .img-container {
+        min-width: 5rem;
+        max-width: 5rem;
+        height: 5rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .card-more-info {
+        font-size: 0.8rem;
+        color: rgba(0, 0, 0, 0.6)
+    }
+
+    .arrow-down {
+        height: 8px;
+    }
+
+    .card-text {
+        display: none
+    }
+
+    .card--expanded
+
+    .card--expanded .card-text {
+        display: block;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .col-md-8 {
+        flex: 0 0 auto;
+        width: auto;
+    }
+}
